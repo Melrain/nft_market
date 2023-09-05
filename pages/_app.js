@@ -1,17 +1,19 @@
-import React from 'react';
-import App from 'next/app';
+import { ThemeProvider } from 'next-themes';
+import Script from 'next/script';
+import { Navbar, Footer } from '../components';
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <>
-        {/* 可以在此添加页面共享的布局或导航栏 */}
-
-        <Component {...pageProps} />
-      </>
-    );
-  }
-}
+const MyApp = ({ Component, pageProps }) => (
+  <ThemeProvider attribute="class">
+    <div className="dark:bg-nft-dark bg-white min-h-screen">
+      <Navbar />
+      <Component {...pageProps} />
+      <Footer />
+    </div>
+    <Script
+      src="https://kit.fontawesome.com/9777dd3416.js"
+      crossOrigin="anonymous"
+    />
+  </ThemeProvider>
+);
 
 export default MyApp;
