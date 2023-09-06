@@ -52,7 +52,7 @@
 
 /*  target the elemenent after the label*/
 .checkbox:checked + .label .ball {
-  transform: translateX(16px);
+  transform: translateX(19px);
 }
 
 .fa-moon {
